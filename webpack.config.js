@@ -1,5 +1,6 @@
 const path = require( 'path' );
 const node_modules = path.resolve( __dirname, 'node_modules' );
+const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
 const PATHS = {
 	app: path.resolve(__dirname, 'src/main.js' ),
@@ -38,6 +39,10 @@ module.exports = {
 				loader: 'style!css!sass'
 			}
 		]
-	}
+	},
+
+	plugins: [
+		new OpenBrowserPlugin({ url: 'http://localhost:8080' })
+	]
 	
 };
