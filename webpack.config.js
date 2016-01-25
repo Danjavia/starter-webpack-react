@@ -1,6 +1,5 @@
 const path = require( 'path' );
 const node_modules = path.resolve( __dirname, 'node_modules' );
-const pathToReact = path.resolve( node_modules, 'react/dist/react.min.js' );
 
 const PATHS = {
   	app: path.join(__dirname, 'app' ),
@@ -8,11 +7,6 @@ const PATHS = {
 };
 
 module.exports = {
-    entry: [
-      	'webpack/hot/dev-server',
-      	'webpack-dev-server/client?http://localhost:8080',
-      	path.resolve(__dirname, 'app/main.js')
-    ],
 
     entry: ['webpack/hot/dev-server', path.resolve(__dirname, 'app/main.js')],
 
@@ -28,9 +22,21 @@ module.exports = {
 	      exclude: /(node_modules|bower_components)/,
 	      loader: 'babel', // 'babel-loader' is also a legal name to reference
 	      query: {
-	        presets: ['react', 'es2015']
+	        presets: [ 'react', 'es2015' ]
 	      }
-	    }
+	    },
+
+      // LESS
+      {
+        test: /\.less$/,
+        loader: 'style!css!less'
+      },
+
+      // SASS
+      {
+        test: /\.scss$/,
+        loader: 'style!css!sass'
+      }
 	  ]
 	}
 };
