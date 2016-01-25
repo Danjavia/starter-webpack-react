@@ -3,7 +3,7 @@ const node_modules = path.resolve( __dirname, 'node_modules' );
 
 const PATHS = {
 	app: path.resolve(__dirname, 'app/main.js' ),
-	build: path.resolve(__dirname, 'build' )
+	build: path.resolve(__dirname, 'dist' )
 };
 
 module.exports = {
