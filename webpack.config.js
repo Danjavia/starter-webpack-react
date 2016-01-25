@@ -42,7 +42,7 @@ module.exports = {
 	},
 
 	plugins: [
-		new OpenBrowserPlugin({ url: 'http://localhost:8080' })
+		new OpenBrowserPlugin({ url: 'http://localhost:3000' })
 	]
 	
 };
