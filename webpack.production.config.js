@@ -45,8 +45,7 @@ module.exports = {
 
 	plugins: [
         new CopyWebpackPlugin([
-                    
-            // {output}/to/file.txt 
+        
             { from: PATHS.main, to: PATHS.index },
         ], {
             ignore: [
