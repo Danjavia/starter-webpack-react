@@ -1,4 +1,10 @@
-import component from './components/header'
+import React, { PropTypes, Component } from 'react'
+import ReactDOM, { render } from 'react-dom'
+import createBrowserHistory from 'history/lib/createBrowserHistory'
+import { Router, Route, Link, IndexRoute, browserHistory, hashHistory } from 'react-router'
+
+// Components here
+import Header from './components/header/header'
 
 
-document.body.appendChild( component() )
+render( <Header />, document.getElementById( 'content' ) )

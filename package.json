@@ -19,6 +19,11 @@
     "webpack": "^1.12.12"
   },
   "dependencies": {
+    "react": "^0.14.6",
+    "react-dom": "^0.14.6",
+    "react-native-woopra": "^1.0.2",
+    "react-router": "^1.0.3",
+    "history": "^1.17.0",
     "webpack-dev-server": "^1.14.1"
   }
 }
