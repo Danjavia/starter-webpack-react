@@ -5,7 +5,7 @@ class Header extends Component {
 	render () {
 		return (
 			<section className="header">
-				<h1>Cambioasdfasdfs</h1>
+				<h1>Test de a</h1>
 			</section>
 		)
 	}
