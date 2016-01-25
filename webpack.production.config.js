@@ -1,9 +1,12 @@
 const path = require( 'path' );
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const node_modules = path.resolve( __dirname, 'node_modules' );
 
 const PATHS = {
 	app: path.resolve(__dirname, 'src/main.js' ),
-	build: path.resolve(__dirname, 'dist' )
+	build: path.resolve(__dirname, 'dist' ),
+	main: path.resolve(__dirname, 'build/index.html' ),
+	index: path.resolve(__dirname, 'dist/index.html' )
 };
 
 module.exports = {
@@ -38,5 +41,18 @@ module.exports = {
 				loader: 'style!css!sass'
 			}
 		]
-	}
+	},
+
+	plugins: [
+        new CopyWebpackPlugin([
+                    
+            // {output}/to/file.txt 
+            { from: PATHS.main, to: PATHS.index },
+        ], {
+            ignore: [
+                // Doesn't copy any files with a txt extension     
+                '*.txt'
+            ]
+        })
+    ]
 };
